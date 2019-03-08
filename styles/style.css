@@ -1,0 +1,67 @@
+td input {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16pt;
+    border: none;
+}
+
+table {
+    border: 2px solid black;
+    margin-right: 25px;
+    margin-left: 25px;
+    border-collapse: collapse
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+
+#table1,
+#table2 {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    display: inline-block;
+}
+
+td {
+    height: 30px;
+    width: 30px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+td:first-child {
+    border-left: 4px solid;
+}
+
+td:nth-child(3n) {
+    border-right: 4px solid;
+}
+
+tr:first-child {
+    border-top: 4px solid;
+}
+
+tr:nth-child(3n) td {
+    border-bottom: 4px solid;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.button {
+    width: 100px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border: 3px solid black;
+    border-radius: 30px;
+    font-size: 20pt;
+}

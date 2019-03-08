@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Sudoku Solver</title>
+</head>
+
+<body>
+
+    <div id="table1">
+        <h2>Initial State</h2>
+        <table>
+            <tr>
+                <td><input type="text" id="input_pos0" size="5"></td>
+                <td><input type="text" id="input_pos1" size="5"></td>
+                <td><input type="text" id="input_pos2" size="5"></td>
+                <td><input type="text" id="input_pos3" size="5"></td>
+                <td><input type="text" id="input_pos4" size="5"></td>
+                <td><input type="text" id="input_pos5" size="5"></td>
+                <td><input type="text" id="input_pos6" size="5"></td>
+                <td><input type="text" id="input_pos7" size="5"></td>
+                <td><input type="text" id="input_pos8" size="5"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="input_pos9" size="5"></td>
+                <td><input type="text" id="input_pos10" size="5"></td>
+                <td><input type="text" id="input_pos11" size="5"></td>
+                <td><input type="text" id="input_pos12" size="5"></td>
+                <td><input type="text" id="input_pos13" size="5"></td>
+                <td><input type="text" id="input_pos14" size="5"></td>
+                <td><input type="text" id="input_pos15" size="5"></td>
+                <td><input type="text" id="input_pos16" size="5"></td>
+                <td><input type="text" id="input_pos17" size="5"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="input_pos18" size="5"></td>
+                <td><input type="text" id="input_pos19" size="5"></td>
+                <td><input type="text" id="input_pos20" size="5"></td>
+                <td><input type="text" id="input_pos21" size="5"></td>
+                <td><input type="text" id="input_pos22" size="5"></td>
+                <td><input type="text" id="input_pos23" size="5"></td>
+                <td><input type="text" id="input_pos24" size="5"></td>
+                <td><input type="text" id="input_pos25" size="5"></td>
+                <td><input type="text" id="input_pos26" size="5"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="input_pos27" size="5"></td>
+                <td><input type="text" id="input_pos28" size="5"></td>
+                <td><input type="text" id="input_pos29" size="5"></td>
+                <td><input type="text" id="input_pos30" size="5"></td>
+                <td><input type="text" id="input_pos31" size="5"></td>
+                <td><input type="text" id="input_pos32" size="5"></td>
+                <td><input type="text" id="input_pos33" size="5"></td>
+                <td><input type="text" id="input_pos34" size="5"></td>
+                <td><input type="text" id="input_pos35" size="5"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="input_pos36" size="5"></td>
+                <td><input type="text" id="input_pos37" size="5"></td>
+                <td><input type="text" id="input_pos38" size="5"></td>
+                <td><input type="text" id="input_pos39" size="5"></td>
+                <td><input type="text" id="input_pos40" size="5"></td>
+                <td><input type="text" id="input_pos41" size="5"></td>
+                <td><input type="text" id="input_pos42" size="5"></td>
+                <td><input type="text" id="input_pos43" size="5"></td>
+                <td><input type="text" id="input_pos44" size="5"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="input_pos45" size="5"></td>
+                <td><input type="text" id="input_pos46" size="5"></td>
+                <td><input type="text" id="input_pos47" size="5"></td>
+                <td><input type="text" id="input_pos48" size="5"></td>
+                <td><input type="text" id="input_pos49" size="5"></td>
+                <td><input type="text" id="input_pos50" size="5"></td>
+                <td><input type="text" id="input_pos51" size="5"></td>
+                <td><input type="text" id="input_pos52" size="5"></td>
+                <td><input type="text" id="input_pos53" size="5"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="input_pos54" size="5"></td>
+                <td><input type="text" id="input_pos55" size="5"></td>
+                <td><input type="text" id="input_pos56" size="5"></td>
+                <td><input type="text" id="input_pos57" size="5"></td>
+                <td><input type="text" id="input_pos58" size="5"></td>
+                <td><input type="text" id="input_pos59" size="5"></td>
+                <td><input type="text" id="input_pos60" size="5"></td>
+                <td><input type="text" id="input_pos61" size="5"></td>
+                <td><input type="text" id="input_pos62" size="5"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="input_pos63" size="5"></td>
+                <td><input type="text" id="input_pos64" size="5"></td>
+                <td><input type="text" id="input_pos65" size="5"></td>
+                <td><input type="text" id="input_pos66" size="5"></td>
+                <td><input type="text" id="input_pos67" size="5"></td>
+                <td><input type="text" id="input_pos68" size="5"></td>
+                <td><input type="text" id="input_pos69" size="5"></td>
+                <td><input type="text" id="input_pos70" size="5"></td>
+                <td><input type="text" id="input_pos71" size="5"></td>
+            </tr>
+
+            <tr>
+                <td><input type="text" id="input_pos72" size="5"></td>
+                <td><input type="text" id="input_pos73" size="5"></td>
+                <td><input type="text" id="input_pos74" size="5"></td>
+                <td><input type="text" id="input_pos75" size="5"></td>
+                <td><input type="text" id="input_pos76" size="5"></td>
+                <td><input type="text" id="input_pos77" size="5"></td>
+                <td><input type="text" id="input_pos78" size="5"></td>
+                <td><input type="text" id="input_pos79" size="5"></td>
+                <td><input type="text" id="input_pos80" size="5"></td>
+            </tr>
+
+
+        </table>
+        <br/>
+        <input class="button" type="button" id="clearI" value="Clear">
+    </div>
+    <div id="table2">
+        <table>
+            <h2>Output State</h2>
+            <tr>
+                <td><input type="text" id="output_pos0" size="5"></td>
+                <td><input type="text" id="output_pos1" size="5"></td>
+                <td><input type="text" id="output_pos2" size="5"></td>
+                <td><input type="text" id="output_pos3" size="5"></td>
+                <td><input type="text" id="output_pos4" size="5"></td>
+                <td><input type="text" id="output_pos5" size="5"></td>
+                <td><input type="text" id="output_pos6" size="5"></td>
+                <td><input type="text" id="output_pos7" size="5"></td>
+                <td><input type="text" id="output_pos8" size="5"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="output_pos9" size="5"></td>
+                <td><input type="text" id="output_pos10" size="5"></td>
+                <td><input type="text" id="output_pos11" size="5"></td>
+                <td><input type="text" id="output_pos12" size="5"></td>
+                <td><input type="text" id="output_pos13" size="5"></td>
+                <td><input type="text" id="output_pos14" size="5"></td>
+                <td><input type="text" id="output_pos15" size="5"></td>
+                <td><input type="text" id="output_pos16" size="5"></td>
+                <td><input type="text" id="output_pos17" size="5"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="output_pos18" size="5"></td>
+                <td><input type="text" id="output_pos19" size="5"></td>
+                <td><input type="text" id="output_pos20" size="5"></td>
+                <td><input type="text" id="output_pos21" size="5"></td>
+                <td><input type="text" id="output_pos22" size="5"></td>
+                <td><input type="text" id="output_pos23" size="5"></td>
+                <td><input type="text" id="output_pos24" size="5"></td>
+                <td><input type="text" id="output_pos25" size="5"></td>
+                <td><input type="text" id="output_pos26" size="5"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="output_pos27" size="5"></td>
+                <td><input type="text" id="output_pos28" size="5"></td>
+                <td><input type="text" id="output_pos29" size="5"></td>
+                <td><input type="text" id="output_pos30" size="5"></td>
+                <td><input type="text" id="output_pos31" size="5"></td>
+                <td><input type="text" id="output_pos32" size="5"></td>
+                <td><input type="text" id="output_pos33" size="5"></td>
+                <td><input type="text" id="output_pos34" size="5"></td>
+                <td><input type="text" id="output_pos35" size="5"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="output_pos36" size="5"></td>
+                <td><input type="text" id="output_pos37" size="5"></td>
+                <td><input type="text" id="output_pos38" size="5"></td>
+                <td><input type="text" id="output_pos39" size="5"></td>
+                <td><input type="text" id="output_pos40" size="5"></td>
+                <td><input type="text" id="output_pos41" size="5"></td>
+                <td><input type="text" id="output_pos42" size="5"></td>
+                <td><input type="text" id="output_pos43" size="5"></td>
+                <td><input type="text" id="output_pos44" size="5"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="output_pos45" size="5"></td>
+                <td><input type="text" id="output_pos46" size="5"></td>
+                <td><input type="text" id="output_pos47" size="5"></td>
+                <td><input type="text" id="output_pos48" size="5"></td>
+                <td><input type="text" id="output_pos49" size="5"></td>
+                <td><input type="text" id="output_pos50" size="5"></td>
+                <td><input type="text" id="output_pos51" size="5"></td>
+                <td><input type="text" id="output_pos52" size="5"></td>
+                <td><input type="text" id="output_pos53" size="5"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="output_pos54" size="5"></td>
+                <td><input type="text" id="output_pos55" size="5"></td>
+                <td><input type="text" id="output_pos56" size="5"></td>
+                <td><input type="text" id="output_pos57" size="5"></td>
+                <td><input type="text" id="output_pos58" size="5"></td>
+                <td><input type="text" id="output_pos59" size="5"></td>
+                <td><input type="text" id="output_pos60" size="5"></td>
+                <td><input type="text" id="output_pos61" size="5"></td>
+                <td><input type="text" id="output_pos62" size="5"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="output_pos63" size="5"></td>
+                <td><input type="text" id="output_pos64" size="5"></td>
+                <td><input type="text" id="output_pos65" size="5"></td>
+                <td><input type="text" id="output_pos66" size="5"></td>
+                <td><input type="text" id="output_pos67" size="5"></td>
+                <td><input type="text" id="output_pos68" size="5"></td>
+                <td><input type="text" id="output_pos69" size="5"></td>
+                <td><input type="text" id="output_pos70" size="5"></td>
+                <td><input type="text" id="output_pos71" size="5"></td>
+            </tr>
+
+            <tr>
+                <td><input type="text" id="output_pos72" size="5"></td>
+                <td><input type="text" id="output_pos73" size="5"></td>
+                <td><input type="text" id="output_pos74" size="5"></td>
+                <td><input type="text" id="output_pos75" size="5"></td>
+                <td><input type="text" id="output_pos76" size="5"></td>
+                <td><input type="text" id="output_pos77" size="5"></td>
+                <td><input type="text" id="output_pos78" size="5"></td>
+                <td><input type="text" id="output_pos79" size="5"></td>
+                <td><input type="text" id="output_pos80" size="5"></td>
+            </tr>
+
+
+        </table>
+        <br/>
+
+        <input class="button" type="button" id="clearO" value="Clear">
+    </div>
+
+
+    <div style="clear:left"></div>
+    <div class="buttons">
+
+
+
+        <input class="button" type="button" id="depth_first" value="Solve">
+        <p>States Evaluted: <span id="states"></span></p>
+    </div>
+    <script src="scripts/sudoku_helper.js"></script>
+    <script src="scripts/sudoku.js"></script>
+    <script src="scripts/depth_first.js"></script>
+    <script src="scripts/breadth_first.js"></script>
+
+</body>
+
+
+</html>
